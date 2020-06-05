@@ -1,5 +1,6 @@
 import  React, {Component} from 'react';
 import './Login.css';
+import userCredentials from '../../userCredentials'
 import { Link } from "react-router-dom";
 
 
@@ -12,7 +13,23 @@ class Login extends Component {
     }
   }
 
-  handleLogin = () => {
+  trackInput = (e) => {
+    const id = e.target.id
+    this.setState({[id]: e.target.value})
+  }
+
+  verifyCredentials = () => {
+    const user = userCredentials.find(user => {
+      return user.username === this.state.username && user.password === this.state.password
+    })
+    return user
+  }
+
+  handleLogin = (e) => {
+    e.preventDefault();
+    const user = this.verifyCredentials('username')
+    const result = user !== undefined
+    this.props.logIn(result, user.username)
     //check input values and compare to saved profiles
     //({username:CBandstra, password: wordwars} {username: RJaeger, password: wordwars})
   }
@@ -20,7 +37,7 @@ class Login extends Component {
   render() {
     return (
       <section className="login-page">
-        <h1>Word Wars</h1>
+        <h1 className='login-header'>Word Wars</h1>
         <section className="login-container">
           <section className="login-input-field">
             <form onSubmit={this.handleLogin}>
