@@ -11,7 +11,10 @@
   color: #F5F2D0;
   margin: 0px;
   height: 40%;
-  margin-left: 2%;
+  font-size: 1.3em;
+  font-family: 'Rock Salt', cursive;
+  width: 20%;
+  text-align: center;
 }
 
 .nav-username {
@@ -22,7 +25,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-right: 58%; */
   border: 2px solid #F5F2D0;
   border-right: 2px solid #231F20;
   border-left: 2px solid #231F20;
@@ -39,7 +41,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 2%;
+  margin-right: 4%;
 }
 
 .logout-btn:hover {
