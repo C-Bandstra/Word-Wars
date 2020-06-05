@@ -3,3 +3,9 @@
   width: 100%;
   background-color: #F5F2D0;
 }
+
+.start-btn {
+  height: 15%;
+  width: 30%;
+  font-size: 3em;
+}
