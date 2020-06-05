@@ -31,6 +31,15 @@
   margin-top: 0px;
   margin-bottom: 5%;
   font-size: 1.75em;
+  font-family: 'Rock Salt', cursive;
+  height: 10%;
+  width: 30%;
+  font-size: 3em;
+  text-align: center;
+  color: #F55D3E;
+  margin-top: 2%;
+  margin-bottom: 0px;
+  /* border-bottom: 3px solid #231F20; */
 }
 
 .login-input {
@@ -55,20 +64,15 @@
 .btn:hover {
   background-color: #F55D3E;
   color: #F0F8EA;
+  cursor: pointer;
 }
 
 .login-header {
-  height: 10%;
-  width: 30%;
-  font-size: 3em;
-  text-align: center;
-  color: #F55D3E;
-  margin-bottom: 0px;
-  border-bottom: 3px solid #231F20;
+
 }
 
-h3 {
-  color: #231F20;
+.login-header-2 {
+  font-size: 2em;
 }
 
 form {
