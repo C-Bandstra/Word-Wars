@@ -29,9 +29,19 @@ class Login extends Component {
     e.preventDefault();
     const user = this.verifyCredentials('username')
     const result = user !== undefined
+    if(!result) {
+      this.throwError()
+      return 
+    }
     this.props.logIn(result, user.username)
-    //check input values and compare to saved profiles
-    //({username:CBandstra, password: wordwars} {username: RJaeger, password: wordwars})
+  }
+
+  throwError = () => {
+    alert('Please Try Again!')
+    this.setState({ 
+      username: '',
+      password: ''
+    })
   }
 
   render() {
@@ -41,9 +51,9 @@ class Login extends Component {
         <section className="login-container">
           <section className="login-input-field">
             <form onSubmit={this.handleLogin}>
-              <h3 className="login-header">Sign In</h3>
-              <input required onChange={this.trackInput} id="username" placeholder="Username" className="login-input username-input"/>
-              <input required onChange={this.trackInput} id="password" placeholder="Password" className="login-input email-input"/>
+              <h3 className="login-header-2">Sign In</h3>
+              <input required value={this.state.username} onChange={this.trackInput} id="username" placeholder="Username" className="login-input username-input"/>
+              <input required value={this.state.password} onChange={this.trackInput} id="password" placeholder="Password" className="login-input email-input"/>
                 <button className="btn login-btn">
                   Login
                 </button>
