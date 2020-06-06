@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Login from '../Login/Login'
 import HomePage from '../HomePage/HomePage'
+import QuizContainer from '../QuizContainer/QuizContainer'
 import { Route, Redirect} from "react-router-dom";
 
 var Owlbot = require('owlbot-js');
@@ -26,14 +27,6 @@ class App extends Component {
     })
   }
 
-  // componentDidMount = () => {
-  //   for(var i = 0; i < 4; i++) {
-  //     const word = randomWords(1)
-  //     console.log(word)
-  //     client.define(word).then(data => console.log(data))
-  //   }
-  // }
-
   render() {
     return (
       <div className="App">
@@ -50,6 +43,12 @@ class App extends Component {
           exact path='/homepage'
           render={() => {
             return <HomePage username={this.state.username}/>
+          }}
+        />
+        <Route
+          exact path='/quiz'
+          render={() => {
+            return <QuizContainer username={this.state.username} />
           }}
         />
       </div>
