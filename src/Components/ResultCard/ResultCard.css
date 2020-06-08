@@ -1,0 +1,63 @@
+.result-card {
+  width: 60%;
+  height: 80%;
+  border: 4px solid #F55D3E;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  /* justify-content: space-around; */
+  align-items: center;
+  background-color: #878E88;
+  color: #F5F2D0
+}
+
+.percentage-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 4px solid #F55D3E;
+  /* border-radius:  5px; */
+  margin: 0px;
+  margin-bottom: 2%;
+  background-color: #F5F2D0;
+  padding: 2%;
+  width: 96%;
+  height: 10%;
+  color: #231F20;
+}
+
+.game-words-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 50%;
+  width: 50%;
+  border: 2px solid #231F20;
+  background-color: #F55D3E;
+  border-radius:  5px;
+  font-size: 1em;
+  color: #F5F2D0
+}
+
+.play-again-btn {
+  text-decoration: none;
+  width: 20%;
+  height: 7%;
+  margin-top: 2%;
+  color: #F55D3E;
+  background-color: #F5F2D0;
+  border: 2px solid #231F20;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-again-btn:hover {
+  background-color: #F55D3E;
+  border: 2px solid ;
+  color: #F5F2D0;
+  cursor: pointer;
+}
