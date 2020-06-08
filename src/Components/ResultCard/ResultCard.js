@@ -11,6 +11,7 @@ class ResultCard extends Component {
     }
   }
 
+
   resetState = () => {
     state.score = 0;
     state.words = [];
@@ -18,7 +19,7 @@ class ResultCard extends Component {
 
   displayGameWords = () => {
     return state.words.map(word => {
-      return <p className='game-word'>{word}</p>
+      return <p key={word} className='game-word'>{word}</p>
     })
   }
 
