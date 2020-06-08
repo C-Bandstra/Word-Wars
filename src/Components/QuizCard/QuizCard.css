@@ -32,9 +32,9 @@
 .definition {
   display: flex;
   align-items: center;
-  height: 17%;
-  font-size: 1.25em;
-  margin-bottom: 2%;
+  height: 22%;
+  font-size: 1em;
+  margin-bottom: 1%;
   background-color: #F55D3E;
   color: #F5F2D0;
   border: 2px solid #231F20;
@@ -42,7 +42,9 @@
 }
 
 .definition-radio {
-  margin: 5%;
+  margin-left:5%;
+  width: 8%;
+  height: 100%;
 }
 
 .temp-quiz-card {
@@ -68,6 +70,7 @@
   display: flex;
   align-items: center;
   margin-right: 4%;
+  justify-content: center;
 }
 
 .guess-btn:hover {
