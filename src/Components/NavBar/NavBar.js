@@ -24,7 +24,7 @@ render() {
       <h1 className='nav-header'>Word Wars</h1>
       <h2 className='nav-username'>Hi, {this.props.username}</h2>
       <h3 className='current-date'>{this.getDate()}</h3>
-      <Link className='profile-btn'>
+      <Link to={`/${this.props.username}/profile`} className='profile-btn'>
       <img 
       className='profile-icon'
       alt='profile-icon'
