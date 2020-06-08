@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Login from './Login'
-import { render, fireEvent, getAllByPlaceholderText } from '@testing-library/react'
+import { render, fireEvent} from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 
 describe('Login', () => {
