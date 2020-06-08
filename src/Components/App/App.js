@@ -12,9 +12,36 @@ class App extends Component {
   constructor() {
     super();
     this.state ={
-      username: 'CBandstra', 
-      loggedIn: true,
+      username: '', 
+      loggedIn: false,
       score: 0
+    }
+  }
+
+  componentDidMount = () => {
+    this.saveToStorage(0, 0)
+  } 
+
+  saveToStorage = (totalCorrect, totalWords) => {
+    let savedUser = this.getFromStorage()
+    let user = {
+      username: this.state.username,
+      totalCorrect: savedUser.totalCorrect + totalCorrect,
+      totalWords: savedUser.totalWords + totalWords,
+    }
+    user = JSON.stringify(user)
+    localStorage.setItem(`${this.state.username}`, user)
+  }
+
+  getFromStorage = () => {
+    if(localStorage.getItem(`${this.state.username}`)) {
+      return JSON.parse(localStorage.getItem(`${this.state.username}`))
+    } else {
+      return {
+        username: this.state.username,
+        totalCorrect: 0,
+        totalWords: 0,
+      }
     }
   }
 
@@ -47,7 +74,7 @@ class App extends Component {
           exact
           path='/quiz/result'
           render={() => {
-            return <ResultContainer username={this.state.username} />
+            return <ResultContainer saveToStorage={this.saveToStorage} username={this.state.username} />
           }}
         />
         <Route
@@ -55,7 +82,8 @@ class App extends Component {
           exact
           render={({ match }) => {
             const { num } = match.params
-            return <QuizContainer updateScore={this.updateScore} quizNum={num} username={this.state.username} />
+            console.log(num)
+            return <QuizContainer updateScore={this.updateScore} quizNum={Number(num)} username={this.state.username} />
           }}
         />
         <Route
