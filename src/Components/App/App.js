@@ -4,6 +4,10 @@ import './App.css';
 import Login from '../Login/Login'
 import HomePage from '../HomePage/HomePage'
 import QuizContainer from '../QuizContainer/QuizContainer'
+import ResultContainer from '../ResultContainer/ResultContainer'
+import ProfileContainer from '../ProfileContainer/ProfileContainer'
+
+
 import { Route, Redirect} from "react-router-dom";
 
 var Owlbot = require('owlbot-js');
@@ -16,7 +20,8 @@ class App extends Component {
     super();
     this.state ={
       username: 'CBandstra', 
-      loggedIn: true
+      loggedIn: true,
+      score: 0
     }
   }
 
@@ -45,10 +50,26 @@ class App extends Component {
             return <HomePage username={this.state.username}/>
           }}
         />
-        <Route
-          exact path='/quiz'
+         <Route
+          exact
+          path='/quiz/result'
           render={() => {
-            return <QuizContainer username={this.state.username} />
+            return <ResultContainer username={this.state.username} />
+          }}
+        />
+        <Route
+          path='/quiz/:num/question'
+          exact
+          render={({ match }) => {
+            const { num } = match.params
+            return <QuizContainer updateScore={this.updateScore} quizNum={num} username={this.state.username} />
+          }}
+        />
+        <Route
+          exact
+          path='/:username/profile'
+          render={() => {
+            return <ProfileContainer username={this.state.username} />
           }}
         />
       </div>
