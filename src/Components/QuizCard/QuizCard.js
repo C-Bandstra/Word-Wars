@@ -60,11 +60,6 @@ class QuizCard extends Component {
   }
   }
 
-  handleClick = () => {
-    this.getWords()
-    this.props.updateScore()
-  }
-
   handleLink = () => {
     const url = window.location.pathname
     if(url === '/quiz/10/question') {
