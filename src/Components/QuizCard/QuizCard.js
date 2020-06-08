@@ -1,36 +1,86 @@
 import React, { Component } from 'react';
 import './QuizCard.css';
+import ReactDOM from 'react-dom'
 import { Link } from "react-router-dom";
 import { fetchWords } from '../../apiCalls'
 import { randomize} from '../../randomize'
+import state from '../../state'
 
 const randomWords = require('random-words');
 
+
+
 class QuizCard extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       loaded: false,
       wordsData: [],
+      correct: false,
+      currentSelected: ''
     }
   }
 
-  componentDidMount = async () => {
+  checkAnswer = (e) => {
+    const label = e.target.parentNode
+    const match = this.state.wordsData.find(word => {
+      return word.definitions[0].definition === label.innerText
+    })
+    state.words.push(label.id)
+    if (match.word === label.id) {
+      state.score++
+    }
+    console.log(state)
+  }
+
+  getWords = async (test) => {
     const words = randomWords(4)
   
     const wordsData = await fetchWords(words)
     Promise.all(wordsData)
      .then(data => this.setState({
-       loaded: true,
        wordsData: data,
+       loaded: true,
     }))
   }
 
+  componentDidMount = async () => {
+    await this.getWords()
+  }
 
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevState.wordsData === this.state.wordsData) {
+      this.setState({
+        wordsData: [],
+        loaded: true
+      })
+  }
+  }
+
+  handleClick = () => {
+    this.getWords()
+    this.props.updateScore()
+  }
+
+  handleLink = () => {
+    const url = window.location.pathname
+    
+    if(url === '/quiz/10/question') {
+      return '/quiz/result'
+    } else {
+      return `/quiz/${Number(this.props.quizNum) + 1}/question`
+    }
+  }
 
   content() {
+    if(this.state.wordsData.length === 0) {
+      return <p>One Moment</p>
+    }
     let nums = randomize()
+    const guessedWord = this.state.wordsData[nums[0]].word
+    console.log(guessedWord)
     const currentWord = this.state.wordsData[nums[0]].word.charAt(0).toUpperCase() + this.state.wordsData[nums[0]].word.slice(1)
+    
     nums = nums.sort((a, b) => a - b)
 
     const word1 = this.state.wordsData[nums[0]]
@@ -42,21 +92,21 @@ class QuizCard extends Component {
       <div className='temp-quiz-card' >
         <h3 className='current-word'>{currentWord}</h3>
         <section className='definition-container'>
-          <label for='definition-1' className='definition'>
-            <input id='definition-1' name='definition' type='radio' className='definition-radio'/> {word1.definitions[0].definition}
+          <label id={guessedWord} for='definition-1' className='definition'>
+            <input id='definition-1' onClick={this.checkAnswer} name='definition' type='radio' className='definition-radio'/> {word1.definitions[0].definition}
           </label>
-          <label for='definition-2' className='definition'>
-            <input id='definition-1' name='definition' type='radio' className='definition-radio'/> {word2.definitions[0].definition}
+          <label id={guessedWord} for='definition-2' className='definition'>
+            <input id='definition-2' onClick={this.checkAnswer} name='definition' type='radio' className='definition-radio'/> {word2.definitions[0].definition}
           </label>
-          <label for='definition-3' className='definition'>
-            <input id='definition-3' name='definition' type='radio' className='definition-radio'/> {word3.definitions[0].definition}
+          <label id={guessedWord} for='definition-3' className='definition'>
+            <input id='definition-3' onClick={this.checkAnswer} name='definition' type='radio' className='definition-radio'/> {word3.definitions[0].definition}
           </label>
-          <label for='definition-4' className='definition'>
-            <input id='definition-4' name='definition' type='radio' className='definition-radio'/> {word4.definitions[0].definition}
+          <label id={guessedWord} for='definition-4' className='definition'>
+            <input id='definition-4' onClick={this.checkAnswer} name='definition' type='radio' className='definition-radio'/> {word4.definitions[0].definition}
           </label>
         </section>
         <div className='guess-btn-container'>
-        <Link className='guess-btn'>
+        <Link onClick={this.getWords} to={this.handleLink}   className='guess-btn'>
           Take Guess!
         </Link>
         </div>
