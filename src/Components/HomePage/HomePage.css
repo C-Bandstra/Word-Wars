@@ -4,8 +4,125 @@
   background-color: #F5F2D0;
 }
 
+.bottom-nav {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
 .start-btn {
-  height: 15%;
-  width: 30%;
-  font-size: 3em;
+  text-decoration: none;
+  height: 10%;
+  width: 45%;
+  font-size: 1em;
+  padding: 2%;
+  margin-left: 43%;
+  margin-top: 5%;
+  background-color: #878E88;
+  border: 2px solid #F55D3E;
+  border-radius: 5px;
+  color: #231F20;
+  font-family: 'Rock Salt', cursive;
+}
+
+.start-btn:hover {
+  background-color: #F55D3E;
+  color: #F5F2D0;
+  border:2px solid #231F20
+}
+
+.info-container-1 {
+  width: 58%;
+  background-color: #F55D3E;
+  height: 78%;
+  margin-top: 5%;
+  border-bottom: 2px solid #F55D3E;
+  border-top:  2px solid #231F20;
+  border-right: 2px solid #231F20;
+  border-radius: 5px;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-1 {
+  background-color: #F5F2D0;
+  width: 85%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 2%;
+  border:2px solid #231F20;
+  border-radius: 5px;
+}
+
+.text {
+  margin: 0px;
+  margin-bottom: 3%;
+  font-size: 16px;
+}
+
+.special {
+  margin-bottom: 10%;
+}
+
+.info-2 {
+  background-color: #F5F2D0;
+  width: 85%;
+  padding: 2%;
+  height: 48%;
+  border:2px solid #231F20;
+  border-radius: 5px;
+}
+
+.info-container-2 {
+  background-color: #F55D3E;
+  width: 37%;
+  height: 78%;
+  margin-top: 5%;
+  border-left: 2px solid #231F20;
+  border-top: 2px solid #231F20;
+  border-bottom: 2px solid #F55D3E;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-container {
+  background-color: #F5F2D0;
+  margin-top: 2.8%;
+  padding: 2%;
+  height: 84%;
+  width: 80%;
+  border: 2px solid #231F20;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-header {
+  text-align: center;
+  font-family: 'Rock Salt', cursive;
+  margin-top: 0px;
+  margin-bottom: 10%;
+}
+
+.profile-card {
+  height: 17%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  background-color: #878E88;
+  border: 2px solid #F55D3E;
+  border-radius: 5px;
+  margin-bottom: 10%;
+}
+
+.stat {
+  color: #231F20;
+  margin: 1.5%;
 }
