@@ -4,11 +4,13 @@ import QuizCard from './QuizCard'
 import { render, fireEvent, waitForElement} from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { fetchWords } from "../../apiCalls";
+import state from '../../state'
 
 jest.mock('../../apiCalls')
 
 
 describe('Quiz Card', () => {
+
   const wordsData = [
     {
       definitions: [{type: "adjective", definition: "having one's feelings"}],
@@ -42,5 +44,19 @@ describe('Quiz Card', () => {
     })
 
     expect(definition).toBeInTheDocument()
+  })
+
+  it('should be able to select a definition', async () => {
+    await fetchWords.mockResolvedValueOnce(wordsData)
+
+    const { getByText } = render(<MemoryRouter><QuizCard username='CBandstra'/></MemoryRouter>)
+
+    const definition = await waitForElement(() => {
+      return getByText('test')
+    })
+
+    fireEvent.click(definition)
+
+    expect(state.words.length).toEqual(1)
   })
 })
