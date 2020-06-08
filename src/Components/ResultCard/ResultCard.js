@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import './ResultCard.css';
-import ReactDOM from 'react-dom'
 import { Link } from "react-router-dom";
 import state from '../../state'
-// import { fetchWords } from '../../apiCalls'
-// import { randomize} from '../../randomize'
-
-const randomWords = require('random-words');
 
 class ResultCard extends Component {
   constructor(props) {
