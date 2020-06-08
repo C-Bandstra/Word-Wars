@@ -6,14 +6,7 @@ import HomePage from '../HomePage/HomePage'
 import QuizContainer from '../QuizContainer/QuizContainer'
 import ResultContainer from '../ResultContainer/ResultContainer'
 import ProfileContainer from '../ProfileContainer/ProfileContainer'
-
-
 import { Route, Redirect} from "react-router-dom";
-
-var Owlbot = require('owlbot-js');
-var randomWords = require('random-words');
-
-const client = Owlbot("2c7169bd30a747ad94dcd30355c31578110dc7aa")
 
 class App extends Component {
   constructor() {
