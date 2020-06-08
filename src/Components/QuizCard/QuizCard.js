@@ -26,11 +26,14 @@ class QuizCard extends Component {
     const match = this.state.wordsData.find(word => {
       return word.definitions[0].definition === label.innerText
     })
+    if(state.words.includes(label.id)) {
+      const index = state.words.indexOf(label.id)
+      state.words.splice(index, 1)
+    }
     state.words.push(label.id)
-    if (match.word === label.id) {
+    if (state.score < this.props.quizNum && match.word === label.id) {
       state.score++
     }
-    console.log(state)
   }
 
   getWords = async (test) => {
@@ -64,8 +67,8 @@ class QuizCard extends Component {
 
   handleLink = () => {
     const url = window.location.pathname
-    
     if(url === '/quiz/10/question') {
+      console.log('hi')
       return '/quiz/result'
     } else {
       return `/quiz/${Number(this.props.quizNum) + 1}/question`
@@ -78,7 +81,6 @@ class QuizCard extends Component {
     }
     let nums = randomize()
     const guessedWord = this.state.wordsData[nums[0]].word
-    console.log(guessedWord)
     const currentWord = this.state.wordsData[nums[0]].word.charAt(0).toUpperCase() + this.state.wordsData[nums[0]].word.slice(1)
     
     nums = nums.sort((a, b) => a - b)
