@@ -20,7 +20,7 @@ const HomePage = (props) => {
       <p className='text'>You will be given a target word and 4 possible definitions</p>
       <p className='text'>After you have answered 10, you will see your result</p>
       <p className='text special'>Have Fun!</p>
-        <Link className='start-btn' to='/quiz/10/question'>
+        <Link className='start-btn' to='/quiz/1/question'>
           Start!
         </Link>
       </div>
