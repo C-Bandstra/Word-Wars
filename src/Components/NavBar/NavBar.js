@@ -19,7 +19,9 @@ class NavBar extends Component {
 render() {
   return (
     <div className='navbar'>
-      <h1 className='nav-header'>Word Wars</h1>
+      <Link to='/homepage' className='home-link'>
+        <h1 className='nav-header'>Word Wars</h1>
+      </Link>
       <h2 className='nav-username'>Hi, {this.props.username}</h2>
       <h3 className='current-date'>{this.getDate()}</h3>
       <Link to={`/${this.props.username}/profile`} className='profile-btn'>
