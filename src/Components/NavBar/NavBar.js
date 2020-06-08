@@ -1,9 +1,7 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import './NavBar.css'
 import {Link} from "react-router-dom";
-import {fetchWord} from '../../apiCalls'
-
-var randomWords = require('random-words');
+import PropTypes from 'prop-types'
 
 class NavBar extends Component {
   constructor(props) {
@@ -38,6 +36,10 @@ render() {
     </div>
   )
 }
+}
+
+NavBar.propTypes = {
+  username: PropTypes.string
 }
 
 

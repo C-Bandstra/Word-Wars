@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './QuizCard.css';
-import ReactDOM from 'react-dom'
 import { Link } from "react-router-dom";
 import { fetchWords } from '../../apiCalls'
 import { randomize} from '../../randomize'
+import PropTypes from 'prop-types'
 import state from '../../state'
 
 const randomWords = require('random-words');
@@ -122,5 +122,11 @@ class QuizCard extends Component {
     )
   }
 }
+
+QuizCard.propTypes = {
+  username: PropTypes.string,
+  quizNum: PropTypes.number
+}
+
 
 export default QuizCard

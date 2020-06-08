@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ResultContainer.css';
-import ReactDOM from 'react-dom'
 import NavBar from '../NavBar/NavBar';
 import ResultCard from '../ResultCard/ResultCard';
-import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'
 
 const ResultContainer = (props) => {
   
@@ -15,6 +14,11 @@ const ResultContainer = (props) => {
       </section>
     </div>
   )
+}
+
+ResultContainer.propTypes = {
+  username: PropTypes.string,
+  quizNum: PropTypes.number
 }
 
 export default ResultContainer
