@@ -18,6 +18,13 @@ class App extends Component {
     }
   }
 
+  logout = () => {
+    this.setState({
+      username: '',
+      loggedIn: false,
+    })
+  }
+
   componentDidUpdate = () => {
     this.saveToStorage(0, 0)
   } 
@@ -67,14 +74,14 @@ class App extends Component {
         <Route
           exact path='/homepage'
           render={() => {
-            return <HomePage username={this.state.username}/>
+            return <HomePage logout={this.logout} username={this.state.username}/>
           }}
         />
          <Route
           exact
           path='/quiz/result'
           render={() => {
-            return <ResultContainer saveToStorage={this.saveToStorage} username={this.state.username} />
+            return <ResultContainer logout={this.logout} saveToStorage={this.saveToStorage} username={this.state.username} />
           }}
         />
         <Route
@@ -82,15 +89,14 @@ class App extends Component {
           exact
           render={({ match }) => {
             const { num } = match.params
-            console.log(num)
-            return <QuizContainer updateScore={this.updateScore} quizNum={Number(num)} username={this.state.username} />
+            return <QuizContainer logout={this.logout} updateScore={this.updateScore} quizNum={Number(num)} username={this.state.username} />
           }}
         />
         <Route
           exact
           path='/:username/profile'
           render={() => {
-            return <ProfileContainer username={this.state.username} />
+            return <ProfileContainer logout={this.logout} username={this.state.username} />
           }}
         />
       </div>
