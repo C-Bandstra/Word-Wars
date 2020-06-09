@@ -16,15 +16,13 @@ class QuizCard extends Component {
     this.state = {
       loaded: false,
       wordsData: [],
-      correct: false,
-      currentSelected: ''
     }
   }
 
   checkAnswer = (e) => {
     const label = e.target.parentNode
     const match = this.state.wordsData.find(word => {
-      return word.definitions[0].definition === label.innerText
+      return word.definitions[0].definition === label.dataset.id
     })
     if(state.words.includes(label.id)) {
       const index = state.words.indexOf(label.id)
@@ -63,7 +61,6 @@ class QuizCard extends Component {
   handleLink = () => {
     const url = window.location.pathname
     if(url === '/quiz/10/question') {
-      console.log('hi')
       return '/quiz/result'
     } else {
       return `/quiz/${Number(this.props.quizNum) + 1}/question`
@@ -89,16 +86,16 @@ class QuizCard extends Component {
       <div className='temp-quiz-card' >
         <h3 className='current-word'>{currentWord}</h3>
         <section className='definition-container'>
-          <label id={guessedWord} for='definition-1' className='definition'>
+          <label id={guessedWord} data-id={word1.definitions[0].definition} htmlFor='definition-1' className='definition'>
             <input id='definition-1' onClick={this.checkAnswer} name='definition' type='radio' className='definition-radio'/> {word1.definitions[0].definition}
           </label>
-          <label id={guessedWord} for='definition-2' className='definition'>
+          <label id={guessedWord} data-id={word2.definitions[0].definition} htmlFor='definition-2' className='definition'>
             <input id='definition-2' onClick={this.checkAnswer} name='definition' type='radio' className='definition-radio'/> {word2.definitions[0].definition}
           </label>
-          <label id={guessedWord} for='definition-3' className='definition'>
+          <label id={guessedWord} data-id={word3.definitions[0].definition} htmlFor='definition-3' className='definition'>
             <input id='definition-3' onClick={this.checkAnswer} name='definition' type='radio' className='definition-radio'/> {word3.definitions[0].definition}
           </label>
-          <label id={guessedWord} for='definition-4' className='definition'>
+          <label id={guessedWord} data-id={word4.definitions[0].definition} htmlFor='definition-4' className='definition'>
             <input id='definition-4' onClick={this.checkAnswer} name='definition' type='radio' className='definition-radio'/> {word4.definitions[0].definition}
           </label>
         </section>
