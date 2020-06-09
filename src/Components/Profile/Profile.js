@@ -10,7 +10,7 @@ const Profile = (props) => {
         </div>
         <div className='average-container'>
           <h1 className='avg-header'>Average:</h1>
-          <p className='profile-average'>{props.userStats.average}%</p>
+          <p className='profile-average'>{props.userStats.average.toFixed(2)}%</p>
         </div>
         <div className='word-count-container'>
         <h1 className='count-header'>Word Count</h1>
