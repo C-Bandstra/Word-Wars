@@ -10,10 +10,10 @@ describe('Result Card', () => {
   const quizNum = 3
 
   it('should render without crashing', () => {
-    const { getByText } = render(<MemoryRouter><ResultCard quizNum={quizNum} /></MemoryRouter>)
+    const { getByText } = render(<MemoryRouter><ResultCard quizNum={quizNum} /></MemoryRouter>);
 
-    const header = getByText('Game Words')
+    const header = getByText('Game Words');
 
-    expect(header).toBeInTheDocument()
+    expect(header).toBeInTheDocument();
   })
 })
