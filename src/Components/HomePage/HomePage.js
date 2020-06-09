@@ -31,17 +31,17 @@ const HomePage = (props) => {
         <section className='profile-card'>
           <p className='stat'>Username: KFunhouse</p>
           <p className='stat'>Average Score: 96%</p>
-          <p className='stat'>Words Correct: 785</p>
+          <p className='stat'>Words Correct: 790</p>
         </section>
         <section className='profile-card'>
           <p className='stat'>Username: JCorbin</p>
           <p className='stat'>Average Score: 93%</p>
-          <p className='stat'>Words Correct: 475</p>
+          <p className='stat'>Words Correct: 470</p>
         </section>
         <section className='profile-card'>
           <p className='stat'>Username: MHuggins</p>
           <p className='stat'>Average Score: 89%</p>
-          <p className='stat'>Words Correct: 207</p>
+          <p className='stat'>Words Correct: 210</p>
         </section>
         </section>
       </section>
