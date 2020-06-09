@@ -8,7 +8,7 @@ const QuizContainer = (props) => {
 
   return (
     <div className='quiz-container'>
-      <NavBar username={props.username}/>
+      <NavBar logout={props.logout} username={props.username}/>
       <QuizCard quizNum={props.quizNum} />
     </div>
   )

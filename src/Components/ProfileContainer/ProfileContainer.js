@@ -30,7 +30,7 @@ import PropTypes from 'prop-types'
   render() {
     return (
       <div className='profile-container'>
-        <NavBar username={this.props.username}/>
+        <NavBar logout={this.props.logout} username={this.props.username}/>
         <section className='profile-page'>
         <Profile userStats={this.state.userStats} username={this.props.username} />
         </section>

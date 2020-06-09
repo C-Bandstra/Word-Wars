@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 const HomePage = (props) => {
   return (
     <div className='homepage'>
-      <NavBar username={props.username}/>
+      <NavBar logout={props.logout} username={props.username}/>
       <section className='bottom-nav'>
       <section className='info-container-1'>
       <div className='info-1'>

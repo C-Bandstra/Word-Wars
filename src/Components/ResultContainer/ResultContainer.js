@@ -11,7 +11,7 @@ const ResultContainer = (props) => {
   
   return (
     <div className='result-container'>
-      <NavBar username={props.username}/>
+      <NavBar logout={props.logout} username={props.username}/>
       <section className="result-card-container">
         <ResultCard quizNum={props.quizNum} />
       </section>
