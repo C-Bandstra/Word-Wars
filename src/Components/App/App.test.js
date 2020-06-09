@@ -124,32 +124,82 @@ describe('App', () => {
     expect(definition).toBeInTheDocument()
   })
 
-  // it('should be able to guess a definition', async () => {
-  //   await fetchWords.mockResolvedValueOnce(wordsData)
-  //   const { getByPlaceholderText, getByText } = render(<MemoryRouter><App /></MemoryRouter>)
+  it('should be able to select a definition', async () => {
+    await fetchWords.mockResolvedValueOnce(wordsData)
+    const { getByPlaceholderText, getByText } = render(<MemoryRouter><App /></MemoryRouter>)
   
-  //   const usernameInput = getByPlaceholderText('Username')
-  //   const passwordInput = getByPlaceholderText('Password')
-  //   const loginBtn = getByText('Login')
+    const usernameInput = getByPlaceholderText('Username')
+    const passwordInput = getByPlaceholderText('Password')
+    const loginBtn = getByText('Login')
   
-  //   fireEvent.change(usernameInput, {target: {value:'CBandstra'}})
-  //   fireEvent.change(passwordInput, {target: {value:'wordwars1'}})
+    fireEvent.change(usernameInput, {target: {value:'CBandstra'}})
+    fireEvent.change(passwordInput, {target: {value:'wordwars1'}})
   
-  //   fireEvent.click(loginBtn)
+    fireEvent.click(loginBtn)
 
-  //   const startBtn = getByText('Start!')
+    const startBtn = getByText('Start!')
 
-  //   fireEvent.click(startBtn)
+    fireEvent.click(startBtn)
 
-  //   const definition = await waitForElement(() => {
-  //     return getByText('put random text here')
-  //   })
-  //   console.log(definition)
+    const definition = await waitForElement(() => {
+      return getByText('put random text here')
+    })
 
-  //   fireEvent.click(definition)
+    fireEvent.click(definition)
 
-  //   expect(state.words.length).toEqual(1)
-  // })
+    expect(state.words.length).toEqual(1)
+  })
 
+  it('should be able guess a definition', async () => {
+    await fetchWords.mockResolvedValue(wordsData)
+    const { getByPlaceholderText, getByText } = render(<MemoryRouter><App /></MemoryRouter>)
+  
+    const usernameInput = getByPlaceholderText('Username')
+    const passwordInput = getByPlaceholderText('Password')
+    const loginBtn = getByText('Login')
+  
+    fireEvent.change(usernameInput, {target: {value:'CBandstra'}})
+    fireEvent.change(passwordInput, {target: {value:'wordwars1'}})
+  
+    fireEvent.click(loginBtn)
+
+    const startBtn = getByText('Start!')
+
+    fireEvent.click(startBtn)
+
+    const definition = await waitForElement(() => {
+      return getByText('round object')
+    })
+
+    fireEvent.click(definition)
+
+    const guessBtn = getByText('Take Guess!')
+
+    fireEvent.click(guessBtn)
+
+    expect(getByText('One Moment')).toBeInTheDocument()
+  })
+
+  it('should be able to logout using the navbar', async () => {
+    await fetchWords.mockResolvedValue(wordsData)
+    const { getByPlaceholderText, getByText } = render(<MemoryRouter><App /></MemoryRouter>)
+  
+    const usernameInput = getByPlaceholderText('Username')
+    const passwordInput = getByPlaceholderText('Password')
+    const loginBtn = getByText('Login')
+  
+    fireEvent.change(usernameInput, {target: {value:'CBandstra'}})
+    fireEvent.change(passwordInput, {target: {value:'wordwars1'}})
+  
+    fireEvent.click(loginBtn)
+
+    const logoutBtn = getByText('LOGOUT')
+
+    fireEvent.click(logoutBtn)
+
+    const newUsernameInput = getByPlaceholderText('Username')
+
+    expect(newUsernameInput).toBeInTheDocument()
+  })
 })
 

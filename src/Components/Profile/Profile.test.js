@@ -22,7 +22,7 @@ describe('Profile', () => {
   it('should render user stats', () => {
     const { getByText } = render(<MemoryRouter><Profile userStats={userStats} username='CBandstra' /></MemoryRouter>);
 
-    const average = getByText('20%');
+    const average = getByText('20.00%');
 
     expect(average).toBeInTheDocument();
   })
