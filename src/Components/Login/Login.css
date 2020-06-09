@@ -5,7 +5,7 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  background-color: #F5F2D0;
+  background-color: white;
 }
 
 .login-container {
@@ -36,7 +36,7 @@
   width: 30%;
   font-size: 3em;
   text-align: center;
-  color: #F55D3E;
+  color: #33658a;
   margin-top: 2%;
   margin-bottom: 0px;
   /* border-bottom: 3px solid #231F20; */
@@ -57,12 +57,12 @@
   height: 10%;
   font-size: 1em;
   border-radius: 5px;
-  border: 2px solid #F55D3E;
+  border: 2px solid #33658a;
   background-color: #F0F8EA;
 }
 
 .btn:hover {
-  background-color: #F55D3E;
+  background-color: #33658a;
   color: #F0F8EA;
   cursor: pointer;
 }

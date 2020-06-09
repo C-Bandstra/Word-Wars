@@ -18,7 +18,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount = () => {
+  componentDidUpdate = () => {
     this.saveToStorage(0, 0)
   } 
 
