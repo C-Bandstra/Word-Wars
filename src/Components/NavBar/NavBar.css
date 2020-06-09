@@ -1,6 +1,6 @@
 .navbar {
   height: 12%;
-  background-color: #F55D3E;
+  background: linear-gradient(90deg,#84dcc6,#33658a 60%,#0b3954 90%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,21 +26,21 @@
 }
 
 .nav-username {
-  background-color: #F5F2D0;
-  color: #F55D3E;
+  background-color: white;
+  color: #0b3954;
   height: 100%;
   width: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #F5F2D0;
+  border: 2px solid white;
   border-right: 2px solid #231F20;
   border-left: 2px solid #231F20;
 }
 
 .logout-btn {
   text-decoration: none;
-  color: #F55D3E;
+  color: #33658a;
   background-color: #F5F2D0;
   border: 2px solid #231F20;
   height: 40%;
@@ -69,7 +69,7 @@
   flex-direction: column;
   justify-content: center;
   text-decoration: none;
-  color: #231F20;
+  color: #F5F2D0;
   width: 10%;
   height: 90%;
   margin-left: 25%;
@@ -79,6 +79,7 @@
   background-color: #F5F2D0;
   border-radius: 35px;
   border: 2px solid #231F20;
+  color: #33658a;
 }
 
 .current-date {

@@ -13,7 +13,7 @@
   height: 79%;
   width: 55%;
   margin-right: 5%;
-  background-color: #F55D3E;
+  background-color: #33658a;
   border: 2px solid #231F20;
   border-radius: 5px;
 }
@@ -21,7 +21,7 @@
 .profile-2 {
   height: 79%;
   width: 30%;
-  background-color: #F55D3E;
+  background-color: #33658a;
   border: 2px solid #231F20;
   border-radius: 5px;
 }
@@ -67,5 +67,6 @@
   background-color: #F5F2D0;
   border: 2px solid #231F20;
   border-radius: 5px;
+  box-shadow: 2px 2px 2px 0.5px black;
 }
 
