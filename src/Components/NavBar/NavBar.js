@@ -32,7 +32,7 @@ render() {
        />
         View Profile
       </Link>
-      <Link className='logout-btn' to='/'>
+      <Link onClick={this.props.logout} className='logout-btn' to='/'>
         LOGOUT
       </Link>
     </div>
