@@ -12,7 +12,7 @@ const HomePage = (props) => {
       <section className='info-container-1'>
       <div className='info-1'>
         <p className='text'>Welcome to Word Wars!</p>
-        <p className='text'>This is game to see who really knows their stuff. Fight against your classmates to reach the top!</p>
+        <p className='text'>This is a game to see who really knows their stuff. Fight against your classmates to reach the top!</p>
         <p className='text'>Compare profiles to find out who is the King</p>
       </div>
       <div className='info-2'>
