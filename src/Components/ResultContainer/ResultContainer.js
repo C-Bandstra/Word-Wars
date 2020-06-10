@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 
 const ResultContainer = (props) => {
 
-  props.saveToStorage(state.score, 10)
+  props.saveToStorage(state.score, 10);
   
   return (
     <div className='result-container'>

@@ -12,33 +12,33 @@ class Login extends Component {
   }
 
   trackInput = (e) => {
-    const id = e.target.id
-    this.setState({[id]: e.target.value})
+    const id = e.target.id;
+    this.setState({[id]: e.target.value});
   }
 
   verifyCredentials = () => {
     const user = userCredentials.find(user => {
-      return user.username === this.state.username && user.password === this.state.password
+      return user.username === this.state.username && user.password === this.state.password;
     })
-    return user
+    return user;
   }
 
   handleLogin = (e) => {
     e.preventDefault();
-    const user = this.verifyCredentials('username')
-    const result = user !== undefined
+    const user = this.verifyCredentials('username');
+    const result = user !== undefined;
     if(!result) {
-      this.throwError()
+      this.throwError();
       return 
     }
-    this.props.logIn(result, user.username)
+    this.props.logIn(result, user.username);
   }
 
   throwError = () => {
     alert('Please Try Again!')
     this.setState({ 
       username: '',
-      password: ''
+      password: '',
     })
   }
 
