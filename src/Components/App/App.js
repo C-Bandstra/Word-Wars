@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import Login from '../Login/Login'
 import HomePage from '../HomePage/HomePage'
@@ -12,9 +11,8 @@ class App extends Component {
   constructor() {
     super();
     this.state ={
-      username: '', 
+      username: 'a', 
       loggedIn: false,
-      score: 0
     }
   }
 
@@ -26,23 +24,23 @@ class App extends Component {
   }
 
   componentDidUpdate = () => {
-    this.saveToStorage(0, 0)
+    this.saveToStorage(0, 0);
   } 
 
   saveToStorage = (totalCorrect, totalWords) => {
-    let savedUser = this.getFromStorage()
+    let savedUser = this.getFromStorage();
     let user = {
       username: this.state.username,
       totalCorrect: savedUser.totalCorrect + totalCorrect,
       totalWords: savedUser.totalWords + totalWords,
     }
-    user = JSON.stringify(user)
-    localStorage.setItem(`${this.state.username}`, user)
+    user = JSON.stringify(user);
+    localStorage.setItem(`${this.state.username}`, user);
   }
 
   getFromStorage = () => {
     if(localStorage.getItem(`${this.state.username}`)) {
-      return JSON.parse(localStorage.getItem(`${this.state.username}`))
+      return JSON.parse(localStorage.getItem(`${this.state.username}`));
     } else {
       return {
         username: this.state.username,
@@ -55,7 +53,7 @@ class App extends Component {
   logIn = (result, username) => {
     this.setState({
       username: username,
-      loggedIn: result
+      loggedIn: result,
     })
   }
 

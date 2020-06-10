@@ -31,7 +31,7 @@ class ResultCard extends Component {
         <div className='game-words-container'>
           {this.displayGameWords()}
         </div>
-        <Link className='play-again-btn' onClick={this.resetState} to='/quiz/10/question'>
+        <Link className='play-again-btn' onClick={this.resetState} to='/quiz/1/question'>
         Play Again!
       </Link>
       </section>
