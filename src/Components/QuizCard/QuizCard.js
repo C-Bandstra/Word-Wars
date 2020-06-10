@@ -20,24 +20,24 @@ class QuizCard extends Component {
   }
 
   checkAnswer = (e) => {
-    const label = e.target.parentNode
+    const label = e.target.parentNode;
     const match = this.state.wordsData.find(word => {
-      return word.definitions[0].definition === label.dataset.id
+      return word.definitions[0].definition === label.dataset.id;
     })
     if(state.words.includes(label.id)) {
-      const index = state.words.indexOf(label.id)
-      state.words.splice(index, 1)
+      const index = state.words.indexOf(label.id);
+      state.words.splice(index, 1);
     }
-    state.words.push(label.id)
+    state.words.push(label.id);
     if (state.score < this.props.quizNum && match.word === label.id) {
-      state.score++
+      state.score++;
     }
   }
 
   getWords = async (test) => {
-    const words = randomWords(4)
+    const words = randomWords(4);
   
-    const wordsData = await fetchWords(words)
+    const wordsData = await fetchWords(words);
     Promise.all(wordsData)
      .then(data => this.setState({
        wordsData: data,
@@ -46,14 +46,14 @@ class QuizCard extends Component {
   }
 
   componentDidMount = async () => {
-    await this.getWords()
+    await this.getWords();
   }
 
   componentDidUpdate = (prevProps, prevState) => {
     if (prevState.wordsData === this.state.wordsData) {
       this.setState({
         wordsData: [],
-        loaded: true
+        loaded: true,
       })
   }
   }
@@ -61,9 +61,9 @@ class QuizCard extends Component {
   handleLink = () => {
     const url = window.location.pathname
     if(url === '/quiz/10/question') {
-      return '/quiz/result'
+      return '/quiz/result';
     } else {
-      return `/quiz/${Number(this.props.quizNum) + 1}/question`
+      return `/quiz/${Number(this.props.quizNum) + 1}/question`;
     }
   }
 
@@ -71,16 +71,16 @@ class QuizCard extends Component {
     if(this.state.wordsData.length === 0) {
       return <p>One Moment</p>
     }
-    let nums = randomize()
-    const guessedWord = this.state.wordsData[nums[0]].word
-    const currentWord = this.state.wordsData[nums[0]].word.charAt(0).toUpperCase() + this.state.wordsData[nums[0]].word.slice(1)
+    let nums = randomize();
+    const guessedWord = this.state.wordsData[nums[0]].word;
+    const currentWord = this.state.wordsData[nums[0]].word.charAt(0).toUpperCase() + this.state.wordsData[nums[0]].word.slice(1);
     
-    nums = nums.sort((a, b) => a - b)
+    nums = nums.sort((a, b) => a - b);
 
-    const word1 = this.state.wordsData[nums[0]]
-    const word2 = this.state.wordsData[nums[1]]
-    const word3 = this.state.wordsData[nums[2]]
-    const word4 = this.state.wordsData[nums[3]]
+    const word1 = this.state.wordsData[nums[0]];
+    const word2 = this.state.wordsData[nums[1]];
+    const word3 = this.state.wordsData[nums[2]];
+    const word4 = this.state.wordsData[nums[3]];
 
     return(
       <div className='temp-quiz-card' >

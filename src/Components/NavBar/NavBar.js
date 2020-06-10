@@ -11,9 +11,9 @@ class NavBar extends Component {
   }
 
   getDate = () => {
-    let today = new Date()
+    let today = new Date();
     let date = (today.getMonth() +1) +'/'+today.getDate()+'/'+today.getFullYear();
-    return date
+    return date;
   }
  
 render() {

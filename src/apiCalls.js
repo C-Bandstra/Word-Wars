@@ -9,9 +9,9 @@ export const fetchWords = async (words) => {
     })
     const data = await response.json()
     if(data.definitions === undefined) {
-      return fetchNewWord()
+      return fetchNewWord();
     }
-    return data
+    return data;
   })
   return wordsData
 }
@@ -23,6 +23,6 @@ export const fetchNewWord = async () => {
         Authorization: "Token 2c7169bd30a747ad94dcd30355c31578110dc7aa"
       }
     })
-    const data = await response.json()
-    return data
+    const data = await response.json();
+    return data;
 }

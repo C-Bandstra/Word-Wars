@@ -1,68 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Word Wars
 
-## Available Scripts
+## Abstract
 
-In the project directory, you can run:
+I was given a choice on what to do for my final project of module 3 at Turing School of Software & Design.
+We had 5 days to develop an app using React. Word Wars is a dictionary definition multiple choice game. I am using the merriam-webster elementary dictionary API along with a random word generator to create questions. The user is able to play 10 question games and will see their results afterwards. The user has to sign in to the app to play and by doing this, it allows them to view their overall stats. I hope to restyle the app completely during the module intermission because the current layout is not my favorite.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React
+- React Testing Library
+- React Router DOM
+- Asyncronous Javascript
+- Local Storage
+- CSS
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Specific Objectives
 
-### `npm test`
+1. The user needs to be able to work with or manipulate the data.
+2. The application should be a multi-page application using React Router.
+3. The use of at least one external API.
+4. Use a modular architecture for application file structure.
+5. Write tests for React components (Integration and Unit)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+> Clone down this repo into an empty directory on your local machine
+> Run `npm install` in your teminal to install the project's dependencies
+> Run `npm start` to run the application in development mode
+> Visit [http://localhost:3000](http://localhost:3000) to view it in the browser
+> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Challenges
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The main challenge of this project for me was testing asynchronously. Mocking out data for tests seemed rather useless previous to building this app, but it definitely saved me more than a couple times. I also struggled with getting the definitions to display in random order so they are not always in the same spot for every question. I think I dealt with these challenges is a decent way but refactoring is definitely on the agenda.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Looking Ahead
 
-### `npm run eject`
+After completing the MVP for this project and looking at it now, I would love to add more sad paths to the testing suites and also some more error handling to display error compoenents when something does work right. I feel I have a good grasp on React and asynchronous JavaScript but there is always room to grow.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Word Wars In Action
+### Login
+<img width="1440" alt="Screen Shot 2020-06-09 at 6 40 25 PM" src="https://user-images.githubusercontent.com/53810104/84215186-bfe2be80-aa82-11ea-8218-d95a4c8f57a2.png">
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Home Page
+<img width="1426" alt="Screen Shot 2020-06-09 at 6 40 51 PM" src="https://user-images.githubusercontent.com/53810104/84215264-f3254d80-aa82-11ea-9126-fcaaddf7f19c.png">
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Question Card
+<img width="1438" alt="Screen Shot 2020-06-09 at 6 41 28 PM" src="https://user-images.githubusercontent.com/53810104/84215532-c9205b00-aa83-11ea-819e-16f9b9b93c2a.png">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Result Page
+<img width="1440" alt="Screen Shot 2020-06-09 at 6 45 30 PM" src="https://user-images.githubusercontent.com/53810104/84215550-db9a9480-aa83-11ea-8400-f15a9a2a3e8e.png">
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## User Stats/Profile
+<img width="721" alt="Screen Shot 2020-06-09 at 6 45 57 PM" src="https://user-images.githubusercontent.com/53810104/84215572-e9501a00-aa83-11ea-92c7-34c86fa57a55.png">
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
