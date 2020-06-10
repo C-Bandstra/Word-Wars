@@ -31,14 +31,15 @@ The main challenge of this project for me was testing asynchronously. Mocking ou
 After completing the MVP for this project and looking at it now, I would love to add more sad paths to the testing suites and also some more error handling to display error compoenents when something does work right. I feel I have a good grasp on React and asynchronous JavaScript but there is always room to grow.
 
 ## Word Wars In Action
+### Login
 <img width="1440" alt="Screen Shot 2020-06-09 at 6 40 25 PM" src="https://user-images.githubusercontent.com/53810104/84215186-bfe2be80-aa82-11ea-8218-d95a4c8f57a2.png">
-## -------------------------------------------------------------------------------------------------------------------------
+### Home Page
 <img width="1426" alt="Screen Shot 2020-06-09 at 6 40 51 PM" src="https://user-images.githubusercontent.com/53810104/84215264-f3254d80-aa82-11ea-9126-fcaaddf7f19c.png">
-## -------------------------------------------------------------------------------------------------------------------------
+### Question Card
 <img width="1438" alt="Screen Shot 2020-06-09 at 6 41 28 PM" src="https://user-images.githubusercontent.com/53810104/84215532-c9205b00-aa83-11ea-819e-16f9b9b93c2a.png">
-## -------------------------------------------------------------------------------------------------------------------------
+### Result Page
 <img width="1440" alt="Screen Shot 2020-06-09 at 6 45 30 PM" src="https://user-images.githubusercontent.com/53810104/84215550-db9a9480-aa83-11ea-8400-f15a9a2a3e8e.png">
-## -------------------------------------------------------------------------------------------------------------------------
+## User Stats/Profile
 <img width="721" alt="Screen Shot 2020-06-09 at 6 45 57 PM" src="https://user-images.githubusercontent.com/53810104/84215572-e9501a00-aa83-11ea-92c7-34c86fa57a55.png">
 
 
