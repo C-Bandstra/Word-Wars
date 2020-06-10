@@ -44,7 +44,7 @@ After completing the MVP for this project and looking at it now, I would love to
 
 
 ### Home Page
-<img width="1426" alt="Screen Shot 2020-06-09 at 6 40 51 PM" src="https://user-images.githubusercontent.com/53810104/84215264-f3254d80-aa82-11ea-9126-fcaaddf7f19c.png">
+<img width="1426" alt="Screen Shot 2020-06-09 at 6 40 51 PM" src="https://user-images.githubusercontent.com/53810104/84216338-71372380-aa86-11ea-83ab-b267f7e73949.png">
 
 
 ### Question Card
