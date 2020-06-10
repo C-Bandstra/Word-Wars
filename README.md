@@ -31,5 +31,5 @@ The main challenge of this project for me was testing asynchronously. Mocking ou
 After completing the MVP for this project and looking at it now, I would love to add more sad paths to the testing suites and also some more error handling to display error compoenents when something does work right. I feel I have a good grasp on React and asynchronous JavaScript but there is always room to grow.
 
 ## The NEW Hacker News In Action
-![login]("Screen Shot 2020-06-09 at 6.40.25 PM")
+![login]("//imgur.com/a/XfmgZCR")
 
