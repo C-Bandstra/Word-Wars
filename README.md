@@ -5,6 +5,14 @@
 I was given a choice on what to do for my final project of module 3 at Turing School of Software & Design.
 We had 5 days to develop an app using React. Word Wars is a dictionary definition multiple choice game. I am using the merriam-webster elementary dictionary API along with a random word generator to create questions. The user is able to play 10 question games and will see their results afterwards. The user has to sign in to the app to play and by doing this, it allows them to view their overall stats. I hope to restyle the app completely during the module intermission because the current layout is not my favorite.
 
+## Technologies Used
+
+- React
+- React Testing Library
+- React Router DOM
+- Asyncronous Javascript
+- Local Storage
+- CSS
 
 ## Specific Objectives
 
