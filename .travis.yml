@@ -1,5 +1,11 @@
 language: node_js
 node_js:
-  - "node"
+- node
 notifications:
   email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: ZBf+vr19JqHZCxpKZU720ms9RbeN076NEj+CVyR5WS1gIc9W2eO66OhmIT+a2Hn47R/wVChHGF5mgPl10NoIX3+mM+LliQK3Et1SxtWVKUDhnfydEBvmeGNjmUbPYW5oUJK7rkfvL6rH+4II7g+LugphhDpDEoFxgsjw9rI1sxDItZYu55e9Dblw0ZxrXQWbBRmT0lWO+43BGlprNRtqceDG4mU1aogUv0vOZuPYz9eR4v5rCQX85VnU+cGyaj/VIDprTKm/1eioTSd2wN+x64ml4EDfgo3LF16Y8I8is3wDzHi6C85L/KWJ/CwPcIFhqMnyVeDiNYBUvg0Rk80TAGevWwgfEtxmIkv2JmR+GwvnE/Vwbmu8TCR1wX/XPy2HP2VbGPYgk5Pn15OjZDboWI1cAuupAuS1bhPuk5hnXs+cHs478MVR4mXv6ip/uQg4nBFXxdWUN+rg7VC+2Zu/wAv5qbhhX0aBQ/y2Cwj+i/8d4aXyaOWV6IBP5EOMapk5sa6HYbx32HaZkcxF/dBlcWpsd41ygmcD8/sbBlb6PLu+4Szpqu6oT6SpRj0Oji6JpqOimB8H59+/t9ogcxDyCYC1RiHKDZzxosWPVtH9tna6h4cm0Op5DkPumUsaPoEq6YYPi1AWB4sXVWUETwk8EiHjSGc5TrNP1EhVXD91sFc=
+    app: word-wars
+    skip_cleanup: true
